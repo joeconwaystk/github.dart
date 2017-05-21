@@ -96,6 +96,9 @@ class PullRequest extends PullRequestInformation {
 
   /// Number of comments
   int commentsCount;
+  
+  /// Number of review comments
+  int reviewCommentsCount;
 
   /// Number of commits
   int commitsCount;
@@ -124,6 +127,7 @@ class PullRequest extends PullRequestInformation {
     pr.mergedBy = User.fromJSON(input['merged_by'] as Map<String, dynamic>);
     pr.mergeCommitSha = input['merge_commit_sha'];
     pr.commentsCount = input['comments'];
+    pr.reviewCommentsCount = input['review_comments'];
     pr.commitsCount = input['commits'];
     pr.additionsCount = input['additions'];
     pr.deletionsCount = input['deletions'];
