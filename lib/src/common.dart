@@ -44,6 +44,7 @@ part "common/model/repos_pages.dart";
 part "common/model/repos_releases.dart";
 part "common/model/repos_stats.dart";
 part "common/model/repos_statuses.dart";
+part "common/model/reviews.dart";
 part "common/model/search.dart";
 part "common/model/users.dart";
 part "common/orgs_service.dart";
