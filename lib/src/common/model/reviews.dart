@@ -1,7 +1,7 @@
 part of github.common;
 
 enum PullRequestReviewState {
-  commented, changesRequested, approved
+  commented, changesRequested, approved, pending, unknown
 }
 
 class PullRequestReview {
@@ -14,10 +14,12 @@ class PullRequestReview {
     submittedAt = DateTime.parse(json["submitted_at"]);
     commitID = json["commit_id"];
 
-    switch (json["state"]) {
+    switch (json["state"].toUpperCase()) {
       case "COMMENTED": state = PullRequestReviewState.commented; break;
       case "APPROVED": state = PullRequestReviewState.approved; break;
       case "CHANGES_REQUESTED": state = PullRequestReviewState.changesRequested; break;
+      case "PENDING": state = PullRequestReviewState.pending; break;
+      default: state = PullRequestReviewState.unknown;
     }
   }
 
